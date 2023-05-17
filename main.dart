@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_nanda/pages/HomePage.dart';
+import 'package:nanda_uts_chat/pages/HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
           )),
       routes: {
         "/": (context) => HomePage(),
+        "1": (context) => search(),
       },
     );
   }
+
+  search() {}
 }
