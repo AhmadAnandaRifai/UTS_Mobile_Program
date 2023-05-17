@@ -20,10 +20,24 @@ class HomePage extends StatelessWidget {
             ),
             actions: [
               Padding(
-                padding: EdgeInsets.only(top: 25, right: 250),
+                padding: EdgeInsets.only(top: 25, right: 130),
                 child: Text(
-                  "Notifications",
+                  "Shopping Cart",
                   style: TextStyle(fontSize: 21),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 12, right: 15),
+                child: Icon(
+                  Icons.notifications,
+                  size: 28,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 12, right: 15),
+                child: Icon(
+                  Icons.shopping_basket,
+                  size: 28,
                 ),
               ),
             ],
@@ -35,229 +49,136 @@ class HomePage extends StatelessWidget {
               height: 20,
             ),
             Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                child: Column(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 12),
-                        child: Row(
-                          children: [
-                            Container(
-                              child: Icon(
-                                Icons.sentiment_satisfied_outlined,
-                                size: 28,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "About your order #45C23B \nWifey made the best father's \nday meal ever. So thankful so happy",
-                                    maxLines: 4,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Spacer(),
-                            Column(
-                              children: [
-                                Text(
-                                  "15:30",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.blue.shade900,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+              child: Text(
+                'Cart subtotal (5 items). Total cost: \$725',
+                style: TextStyle(
+                  fontSize: 21,
                 ),
               ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 50,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.blue,
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Proceed to checkout',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Container(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: Column(
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 12),
-                        child: Row(
-                          children: [
-                            Container(
-                              child: Icon(
-                                Icons.document_scanner,
-                                size: 28,
+                    for (int i = 1; i <= 4; i++)
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          margin: EdgeInsets.symmetric(vertical: 12),
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Image.asset(
+                                  "images/profile$i.jpg",
+                                  height: 65,
+                                  width: 65,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Silly Cats",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    Text(
+                                      "In Stock",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.lightGreen.shade200,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Container(
+                                              height: 25,
+                                              width: 50,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                                color: Colors.blue,
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  '01        >',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Spacer(),
+                              Column(
                                 children: [
                                   Text(
-                                    "Customize our prodcts. \nNow you can made the best \nand perfect clothes just for you",
-                                    maxLines: 4,
+                                    "\$ 145",
                                     style: TextStyle(
                                       fontSize: 15,
+                                      color: Colors.blue.shade900,
+                                      fontWeight: FontWeight.w300,
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
+                                  SizedBox(height: 6),
                                 ],
                               ),
-                            ),
-                            Spacer(),
-                            Column(
-                              children: [
-                                Text(
-                                  "11:30",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.blue.shade900,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                              ],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                child: Column(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 12),
-                        child: Row(
-                          children: [
-                            Container(
-                              child: Icon(
-                                Icons.attach_money,
-                                size: 28,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Breaking News! We have \nnew methods to payment. \nLearn how to pay off debt \nfast using the stack method",
-                                    maxLines: 4,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Spacer(),
-                            Column(
-                              children: [
-                                Text(
-                                  "10:30",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.blue.shade900,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                child: Column(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 12),
-                        child: Row(
-                          children: [
-                            Container(
-                              child: Icon(
-                                Icons.document_scanner,
-                                size: 28,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "We took into consideration \nmultiple use cases and \ncame up with some specific elements for you",
-                                    maxLines: 4,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Spacer(),
-                            Column(
-                              children: [
-                                Text(
-                                  "04:10",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.blue.shade900,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                                SizedBox(height: 6),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
